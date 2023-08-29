@@ -1,0 +1,26 @@
+/* NavTab.css */
+
+.navbar {
+    background-color: #f8f9fa;
+    /* Set the background color */
+}
+
+.nav-link {
+    color: #343a40;
+    /* Set the link color */
+    margin: 0 15px;
+    /* Add some spacing between links */
+    transition: color 0.3s;
+    /* Smooth color transition on hover */
+}
+
+.nav-link:hover {
+    color: #007bff;
+    /* Change link color on hover */
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: center;
+    /* Center the nav links horizontally */
+}
