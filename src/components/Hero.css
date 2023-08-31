@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+.video {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    background-color: black !important;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    background-color: #00000033;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    width: 100%;
+}
+
+.head {
+    font-size: 5.5rem;
+}
+
+.switch {
+    cursor: pointer;
+}
+
+.switch:hover {
+    opacity: 90%;
+    animation: pulse;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s;
+    /* don't forget to set a duration! */
+}
+
+.cov {
+    background-color: black !important;
+}
+
+.lander {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.start {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.begin {
+    font-size: 1.2rem;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.btn-primary {
+    --bs-btn-bg: #2f80db !important;
+    --bs-btn-hover-color: #0b5ed7 !important;
+    --bs-btn-hover-bg: white !important;
+}
+
+@media (max-width: 1000px) {
+    .head {
+        font-size: 3rem;
+    }
+    .start {
+        font-size: 1.5rem !important;
+    }
+    .begin {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,28 @@
+/* Mobile View */
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+.expect {
+    font-family: 'Archivo Black', sans-serif;
+    margin-top: 100px !important;
+}
+
+.tis {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.3rem;
+}
+
+.ct {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+@media (max-width: 1000px) {
+    .animateMain {
+        height: 100% !important;
+    }
+    .holder {
+        padding-bottom: 50px;
+    }
+    .animateMain h1 {
+        padding-top: 50px;
+    }
+}
