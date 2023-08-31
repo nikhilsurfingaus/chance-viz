@@ -4,7 +4,7 @@ import './Footer.css';
 
 const Foot = () => {
   return (
-    <div className='text-white' style={{backgroundColor: '#197adb', padding: '1rem', width: '100%', margin: 'auto' }}>
+    <div className='text-white' style={{backgroundColor: '#0b5ed7', padding: '1rem', width: '100%', margin: 'auto' }}>
       <div
         style={{
           display: 'flex',

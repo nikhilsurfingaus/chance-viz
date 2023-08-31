@@ -15,6 +15,11 @@
     font-family: 'Archivo Black', sans-serif;
 }
 
+.cardi:hover {
+    background-color: rgba(255, 255, 255, 0.93) !important;
+    transition: 0.2s ease-in-out;
+}
+
 @media (max-width: 1000px) {
     .animateMain {
         height: 100% !important;
