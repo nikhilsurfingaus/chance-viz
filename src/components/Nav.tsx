@@ -9,7 +9,7 @@ import './Nav.css';
 
 const NavTab = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary fixed-top">
       <Container>
       <Navbar.Brand className='text-white' href="/">
           <span style={{ fontSize: '2rem' }}>Chance Viz</span>

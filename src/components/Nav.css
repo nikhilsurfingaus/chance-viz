@@ -2,6 +2,8 @@
 
 .navbar {
     background-color: #197adb !important;
+    position: sticky;
+    z-index: 100;
 }
 
 .navbar-nav {
