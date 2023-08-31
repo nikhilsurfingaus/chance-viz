@@ -4,6 +4,7 @@ import Home from './Home';
 import Visual from './Visual';
 import About from './About';
 import PageNotFound from './PageNotFound';
+import Foot from '../components/Footer';
 
 const Layout = () => {
   return (
@@ -17,6 +18,7 @@ const Layout = () => {
               <Route path="/404" element={<PageNotFound />}  />
               <Route path="*" element={<Navigate to="/404" />}  />
       </Routes>
+      <Foot />
     </Router>
   )
 }
