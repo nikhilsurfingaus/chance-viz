@@ -1,0 +1,49 @@
+/* AboutInspire.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+.about-inspire {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.inspire-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.5rem;
+}
+
+.lorem-ipsum {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.55rem;
+    margin-bottom: 2rem;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.blue-circle {
+    background-color: #0b5ed7;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .text-container,
+    .image-container {
+        text-align: center;
+        justify-content: center;
+    }
+}
