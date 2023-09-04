@@ -32,3 +32,9 @@
 .social-btn.instagram:hover {
     background: #C46200;
 }
+
+@media (max-width: 1000px) {
+    .socials {
+        margin-top: 10px;
+    }
+}

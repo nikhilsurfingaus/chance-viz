@@ -27,7 +27,7 @@ const Foot = () => {
         <div className='ftext'>
           <small>&copy; Chance Viz, 2023. All rights reserved.</small>
         </div>
-        <div style={{ display: 'flex'}} className='text-white'>
+        <div style={{ display: 'flex'}} className='text-white socials'>
           <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
             <button className="social-btn">
               <FaFacebookF />

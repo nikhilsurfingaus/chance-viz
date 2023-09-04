@@ -40,10 +40,17 @@
     align-items: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .text-container,
     .image-container {
         text-align: center;
         justify-content: center;
+    }
+    .lorem-ipsum {
+        font-size: 1rem;
+        margin-bottom: 1.6rem;
+    }
+    .inspire-heading {
+        font-size: 2rem;
     }
 }

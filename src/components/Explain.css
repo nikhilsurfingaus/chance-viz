@@ -20,14 +20,42 @@
     transition: 0.2s ease-in-out;
 }
 
+@media (max-width: 1600px) {
+    /* Reduce card height and push everything down */
+    .cardi {
+        height: 65% !important;
+    }
+    .holder {
+        padding-top: 140px !important;
+        /* Push everything down by adding padding at the top */
+        padding-bottom: 0px !important;
+        /* Add padding at the bottom */
+    }
+    .tis {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 1000px) {
     .animateMain {
         height: 100% !important;
     }
     .holder {
-        padding-bottom: 50px;
+        padding-bottom: 0px !important;
+    }
+    .holder {
+        padding-top: 40px !important;
+        /* Push everything down by adding padding at the top */
+        padding-bottom: 0px !important;
+        /* Add padding at the bottom */
     }
     .animateMain h1 {
-        padding-top: 50px;
+        padding-top: 0px !important;
+    }
+    .expect {
+        margin-top: 0px !important;
+    }
+    .cardi {
+        height: 90% !important;
     }
 }
