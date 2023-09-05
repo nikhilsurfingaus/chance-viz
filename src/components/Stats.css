@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+
+/* Stats.css */
+
+.inspire-head {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.5rem;
+}
+
+
+/* Add this CSS to make the stat number blue, bold, and in uppercase */
+
+.stat-number {
+    color: #0b5ed7;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Alfa Slab One', cursive;
+    letter-spacing: 0.1rem;
+}
+
+.stat-text {
+    font-size: 22px;
+    font-weight: 200 !important;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+
+/* You can also add this CSS to adjust the spacing and alignment */
+
+.stats-container {
+    padding: 20px;
+}
+
+.container.contain {
+    margin-top: 30px;
+}
+
+.stat-item {
+    margin-bottom: 40px;
+    /* Adjust this value as needed to control the gap */
+}
+
+
+/* Add more styling as needed */
+
+@media (max-width: 1600px) {
+    .contain {
+        margin-top: 50px !important;
+    }
+    .inspire-head {
+        font-size: 1.8rem;
+        margin-top: 20px !important;
+    }
+    .stat-number {
+        font-size: 24px;
+    }
+    .stat-text {
+        font-size: 18px;
+    }
+    .stats-container {
+        padding: 20px;
+    }
+    .container.contain {
+        margin-top: 30px;
+    }
+    .stat-item {
+        margin-bottom: 30px;
+        /* Adjust this value as needed to control the gap */
+    }
+}
+
+@media (max-width: 1000px) {
+    .contain {
+        margin-top: 40px !important;
+        height: 100%;
+    }
+    .inspire-head {
+        font-size: 1.5rem;
+        margin-top: 10px !important;
+    }
+    .stat-number {
+        font-size: 19px;
+    }
+    .stat-text {
+        font-size: 16px;
+    }
+    .stats-container {
+        padding: 20px;
+    }
+    .container.contain {
+        margin-top: 30px;
+    }
+    .stat-item {
+        margin-bottom: 30px;
+        /* Adjust this value as needed to control the gap */
+    }
+}
