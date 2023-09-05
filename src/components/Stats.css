@@ -75,6 +75,9 @@
         margin-bottom: 30px;
         /* Adjust this value as needed to control the gap */
     }
+    .img-fluid {
+        height: 45% !important;
+    }
 }
 
 @media (max-width: 1000px) {

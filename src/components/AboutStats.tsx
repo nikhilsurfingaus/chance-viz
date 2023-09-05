@@ -1,5 +1,7 @@
 import React from 'react';
 import './Stats.css';
+import people from '../animation/stat1.json';
+import Lottie from 'lottie-react';
 
 const AboutStats = () => {
   return (
@@ -32,7 +34,7 @@ const AboutStats = () => {
             </div>
           </div>
           <div className="col-md-6">
-            <img src="your-image-url.jpg" alt="animation" className="img-fluid" />
+          <Lottie animationData={people} style={{ height: '60%' }}  className="img-fluid" />
           </div>
         </div>
       </div>
