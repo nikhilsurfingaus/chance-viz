@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+.cont {
+    margin-top: 0px !important;
+}
+
+.accord {
+    width: 50%;
+    margin: 0 auto;
+    /* Set the background color */
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    /* Set the font color */
+}
+
+
+/* Styling for accordion items */
+
+.accord .accordion-button {
+    background-color: #ffffff;
+    color: black;
+    /* Add this line to set the outline color */
+    transition: background-color 0.3s ease-in-out;
+    /* Add transition for smooth hover effect */
+}
+
+.accord .accordion-body {
+    background-color: #ffffff;
+    color: black;
+}
+
+
+/* Apply hover effect when hovering over accordion items */
+
+.accord .accordion-button:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.accordion {
+    --bs-accordion-border-color: rgb(0, 0, 0) !important;
+    font-weight: 600;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 110, 255, 0.733);
+}
+
+.an {
+    font-family: 'Teko', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+}
+
+@media (max-width: 1600px) {
+    .cont {
+        margin-top: -5px !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .accord {
+        width: 80% !important;
+    }
+    .accordion {
+        width: 100% !important;
+    }
+    .cont {
+        margin-top: -5px !important;
+    }
+}

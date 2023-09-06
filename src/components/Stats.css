@@ -67,6 +67,7 @@
     }
     .stats-container {
         padding: 20px;
+        height: 60vh !important;
     }
     .container.contain {
         margin-top: 30px;
@@ -97,6 +98,7 @@
     }
     .stats-container {
         padding: 20px;
+        height: 80vh !important;
     }
     .container.contain {
         margin-top: 30px;
