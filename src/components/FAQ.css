@@ -39,7 +39,7 @@
 
 .accordion {
     --bs-accordion-border-color: rgb(0, 0, 0) !important;
-    font-weight: 600;
+    font-weight: 400;
     --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 110, 255, 0.733);
 }
 
@@ -47,6 +47,10 @@
     font-family: 'Teko', sans-serif;
     font-size: 1rem;
     text-align: left;
+}
+
+.ct {
+    font-weight: 200 !important;
 }
 
 @media (max-width: 1600px) {
