@@ -13,6 +13,7 @@
 }
 
 .form-control {
+    margin-left: 10px;
     border-radius: 0;
     /* Reset border-radius to 0 for all corners */
     border-top-left-radius: 10px !important;
@@ -37,6 +38,9 @@
 }
 
 @media (max-width: 1000px) {
+    .send {
+        height: 35vh !important;
+    }
     .float {
         flex-direction: column !important;
         width: 80%;
@@ -47,6 +51,10 @@
     .buty {
         border-radius: 10px;
         margin-top: 15px;
-        font-size: 0.8rem;
+        font-size: 1rem;
+    }
+    .ally {
+        width: 3.5rem !important;
+        height: 2.6rem;
     }
 }
