@@ -1,8 +1,11 @@
 import React from 'react'
+import VizInput from '../components/VizInput'
 
 const Visual = () => {
   return (
-    <div>Visual</div>
+    <div>
+      <VizInput />
+    </div>
   )
 }
 
