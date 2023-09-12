@@ -44,3 +44,16 @@ form.frm {
     color: #1479ed;
     background-color: white !important;
 }
+
+.lot,
+.sids {
+    border-radius: 15px;
+}
+
+.resi {
+    height: 240vh !important;
+}
+
+.titti {
+    margin-top: 100px !important;
+}

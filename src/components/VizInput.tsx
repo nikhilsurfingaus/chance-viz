@@ -8,6 +8,14 @@ import Lottie from 'lottie-react';
 import tennis from '../animation/visAnimate/tennis.json'
 import orange from '../animation/visAnimate/orange.json'
 
+//75%
+import van from '../animation/visAnimate/van.json'
+import car from '../animation/visAnimate/car.json'
+
+//50%
+import nfl from '../animation/visAnimate/nfl.json'
+import soccer from '../animation/visAnimate/soccer.json'
+
 const ratioData = [
   {
     ratio: 1,
@@ -15,6 +23,20 @@ const ratioData = [
     leftText: 'Tennis Ball',
     right: orange,
     rightText: 'Orange',
+  },
+  {
+    ratio: 0.75,
+    left: van,
+    leftText: 'Van SUV',
+    right: car,
+    rightText: 'Car',
+  },
+  {
+    ratio: 0.50,
+    left: soccer,
+    leftText: 'Soccer Field',
+    right: nfl,
+    rightText: 'NFL Field',
   },
   // Add more ratio objects as needed
 ];
@@ -76,7 +98,13 @@ const VizInput = () => {
     } else if (data.chance >= data.entry) {
       // Calculate the percentage
       console.log(`Chance as a percentage: ${(data.entry / data.chance) * 100}%`);
-      setRatio(data.entry / data.chance)
+      if ((data.entry / data.chance) < 1.0 && (data.entry / data.chance) >= 0.75 ){
+        setRatio(0.75)
+      } else if ((data.entry / data.chance) < 0.75 && (data.entry / data.chance) >= 0.5 )  {
+        setRatio(0.5)
+      } else {
+        setRatio(data.entry / data.chance)
+      }
       setDisplayRes(true);
     } else {
       alert('Invalid input: Entry should be less than or equal to Chance.');
@@ -100,32 +128,40 @@ const VizInput = () => {
   };
 
   return (
-    <div style={{ backgroundColor: 'white', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      {displayRes ? (
-        <div>
-        <button onClick={handleSwitch}>Back to Input</button>
-        <div>Result</div>
-        <p>Chance Ratio: {ratio}</p>
-        {ratioData.map((ratioItem) => {
-          if (ratio === ratioItem.ratio) {
-            return (
-              <div key={ratioItem.ratio} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ flex: 1 }}>
-                  <Lottie animationData={ratioItem.left} style={{ height: '120%' }} />
-                  <p>{ratioItem.leftText}</p>
-                </div>
-                <div style={{ flex: 1 }}>
-                  <Lottie animationData={ratioItem.right} style={{ height: '120%' }} />
-                  <p>{ratioItem.rightText}</p>
-                </div>
-              </div>
-            );
-          }
-          return null;
-        })}
+    <div style={{ backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+{displayRes ? (
+        <div style={{height: '200vh'}} >
+          <h1 className='mt-5 titti inspire-heading' >Your Chance Visualised</h1>
+          <div className='mt-5 lot' style={{ display: 'flex', width: '100%', background: '#1479ed' }}>
+            {ratioData.map((ratioItem) => {
+              if (ratio === ratioItem.ratio) {
+                return (
+                  <div key={ratioItem.ratio} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }} className='sids'>
+                    <div>
+                    </div>
+                    <div style={{ flex: 1, background: 'rgba(255, 255, 255, 0.93)' }}>
+                      <Lottie animationData={ratioItem.left} style={{ height: '400px' }} />
+                      <p style={{fontSize: '2.5rem', fontWeight: 'bold'}}>{ratioItem.leftText}</p>
+                    </div>
+                    <div style={{ flex: 1, background: '#1479ed', color: 'white', borderRadius: '15px'}}>
+                      <Lottie className='ani' animationData={ratioItem.right} style={{ height: '400px', width: '200px' }} />
+                      <p style={{fontSize: '2.5rem', fontWeight: 'bold'}}>{ratioItem.rightText}</p>
+                    </div>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+          <div className='stats mt-5'>
+            <button onClick={handleSwitch}>Back to Input</button>
+            <div>Result</div>
+            <p>Chance Ratio: {ratio}</p>
+          </div>
       </div>
       ) : (
-        <form className='frm' onSubmit={handleSubmit}>
+        <div style={{height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <form className='frm' onSubmit={handleSubmit}>
           <h2 className='mb-5' style={{fontWeight: 'bold', fontSize: '2.5rem'}}>Enter Data To Visualize</h2>
           <div className="sentence">
             <p className='mb-1'>Chance of</p>
@@ -175,7 +211,7 @@ const VizInput = () => {
               disabled={data.entry !== 0 || data.chance !== 0}
               style={{
                 color: 'white',
-                width: '4rem',
+                width: '10rem',
                 backgroundColor: 'transparent', // Transparent background
                 fontSize: '14px',
                 border: '3px solid white', 
@@ -183,15 +219,18 @@ const VizInput = () => {
               }}
             >
               <option style={{ color: 'black' }} value={0}>0%</option>
+              <option style={{ color: 'black' }} value={0.000002}>Less Than 0.000002%</option>
+              <option style={{ color: 'black' }} value={0.00001}>0.00001%</option>
+              <option style={{ color: 'black' }} value={0.0001}>0.0001%</option>
+              <option style={{ color: 'black' }} value={0.001}>0.001%</option>
+              <option style={{ color: 'black' }} value={0.01}>0.01%</option>
+              <option style={{ color: 'black' }} value={0.5}>0.5%</option>
+              <option style={{ color: 'black' }} value={1}>1%</option>
+              <option style={{ color: 'black' }} value={5}>5%</option>
               <option style={{ color: 'black' }} value={10}>10%</option>
-              <option style={{ color: 'black' }} value={20}>20%</option>
-              <option style={{ color: 'black' }} value={30}>30%</option>
-              <option style={{ color: 'black' }} value={40}>40%</option>
+              <option style={{ color: 'black' }} value={25}>25%</option>
               <option style={{ color: 'black' }} value={50}>50%</option>
-              <option style={{ color: 'black' }} value={60}>60%</option>
-              <option style={{ color: 'black' }} value={70}>70%</option>
-              <option style={{ color: 'black' }} value={80}>80%</option>
-              <option style={{ color: 'black' }} value={90}>90%</option>
+              <option style={{ color: 'black' }} value={75}>75%</option>
               <option style={{ color: 'black' }} value={100}>100%</option>
             </select>
           </div>
@@ -199,6 +238,7 @@ const VizInput = () => {
             <button className='btn generate' type="submit">Generate Visual</button>
           </div>
         </form>
+        </div>
       )}
     </div>
   );
