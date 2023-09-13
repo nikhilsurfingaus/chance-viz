@@ -16,6 +16,50 @@ import car from '../animation/visAnimate/car.json'
 import nfl from '../animation/visAnimate/nfl.json'
 import soccer from '../animation/visAnimate/soccer.json'
 
+//25%
+import grape from '../animation/visAnimate/grape.json'
+import burger from '../animation/visAnimate/burger.json'
+
+//10%
+import pencil from '../animation/visAnimate/pencil.json'
+import bottle from '../animation/visAnimate/bottle.json'
+
+//5%
+import marble from '../animation/visAnimate/marble.json'
+import bowling from '../animation/visAnimate/bowling.json'
+
+//1%
+import dolphin from '../animation/visAnimate/dolphin.json'
+import sub from '../animation/visAnimate/submarine.json'
+
+//0.5%
+import phone from '../animation/visAnimate/phone.json'
+import cinema from '../animation/visAnimate/cinema.json'
+
+//0.01%
+import cell from '../animation/visAnimate/cell.json'
+import human from '../animation/visAnimate/human.json'
+
+//0.001%
+import sand from '../animation/visAnimate/sand.json'
+import beach from '../animation/visAnimate/beach.json'
+
+//0.0001%
+import molecule from '../animation/visAnimate/molecule.json'
+import droplet from '../animation/visAnimate/droplet.json'
+
+//0.00001%
+import coral from '../animation/visAnimate/coral.json'
+import ocean from '../animation/visAnimate/world.json'
+
+//0.000002%
+import star from '../animation/visAnimate/star.json'
+import milky from '../animation/visAnimate/galaxy.json'
+
+// < 0.000002%
+import atom from '../animation/visAnimate/atom.json'
+import cosmos from '../animation/visAnimate/cosmos.json'
+
 const ratioData = [
   {
     ratio: 1,
@@ -26,10 +70,10 @@ const ratioData = [
   },
   {
     ratio: 0.75,
-    left: van,
-    leftText: 'Van SUV',
-    right: car,
-    rightText: 'Car',
+    left: car,
+    leftText: 'Car',
+    right: van,
+    rightText: 'Van SUV',
   },
   {
     ratio: 0.50,
@@ -37,6 +81,83 @@ const ratioData = [
     leftText: 'Soccer Field',
     right: nfl,
     rightText: 'NFL Field',
+  },
+    {
+    ratio: 0.25,
+    left: grape,
+    leftText: 'Grape',
+    right: burger,
+    rightText: 'Burger',
+  },
+    {
+    ratio: 0.10,
+    left: pencil,
+    leftText: 'Pencil',
+    right: bottle,
+    rightText: 'Bottle',
+  },
+    {
+    ratio: 0.05,
+    left: marble,
+    leftText: 'Marble',
+    right: bowling,
+    rightText: 'Bowling Ball',
+  },
+  {
+    ratio: 0.01,
+    left: dolphin,
+    leftText: 'Dolphin',
+    right: sub,
+    rightText: 'Submarine',
+  },
+    {
+    ratio: 0.005,
+    left: phone,
+    leftText: 'Phone Screen',
+    right: cinema,
+    rightText: 'Theatre Screen',
+  },
+    {
+    ratio: 0.0001,
+    left: cell,
+    leftText: 'Singular Cell',
+    right: human,
+    rightText: 'Human Body',
+  },
+  {
+    ratio: 0.00001,
+    left: sand,
+    leftText: 'Grain Of Sand',
+    right: beach,
+    rightText: 'Beach',
+  },
+  {
+    ratio: 0.000001,
+    left: molecule,
+    leftText: 'Single Molecule',
+    right: droplet,
+    rightText: 'Water Droplet',
+  },
+  {
+    ratio: 0.0000001,
+    left: coral,
+    leftText: 'Total Coral',
+    right: ocean,
+    rightText: 'Total Ocean',
+  },
+  {
+    ratio: 50,
+    left: star,
+    leftText: 'Single Star',
+    right: milky,
+    rightText: 'Milky Way Galaxy',
+  },
+  {
+    ratio: 0.000000025,
+    left: atom,
+    leftText: 'Singular Atom',
+    right: cosmos,
+    rightText: 'Cosmos Universe',
   },
   // Add more ratio objects as needed
 ];
@@ -55,21 +176,49 @@ const VizInput = () => {
 
   const handleChange = (event: any) => {
     const { name, value } = event.target;
-
-    // If the "percentage" select is changed, reset the chance and entry fields
+  
     if (name === 'percentage') {
-      setData({
-        entry: 0,
-        chance: 0,
-        percentage: parseFloat(value),
-      });
-    } else {
+      if (value === '1 in 10 million') {
+        // Handle the special case of "1 in 10 million"
+        setData({
+          entry: 0,
+          chance: 0,
+          percentage: 0.00001,
+        });
+        setRatio(0.0000001); // Manually set the ratio for this case
+      }  else if (value === '1 in 50 million') {
+          // Handle the special case of "1 in 50 million"
+          setData({
+            entry: 0,
+            chance: 0,
+            percentage: 0.000002,
+          });
+          setRatio(50); // Manually set the ratio for this case
+      } else if (value === '1 in 100 million') {
+          // Handle the special case of "1 in 100 million"
+          setData({
+            entry: 0,
+            chance: 0,
+            percentage: 0.0000025,
+          });
+          setRatio(0.000000025); // Manually set the ratio for this case
+      } else {
+        // Handle other percentage values
+        setData({
+          entry: 0,
+          chance: 0,
+          percentage: parseFloat(value),
+        });
+      }
+    } else if (name === 'entry' || name === 'chance') {
+      // Handle the "entry" and "chance" input fields
       setData({
         ...data,
-        [name]: name === 'chance' ? parseFloat(value) : value,
+        [name]: parseFloat(value),
       });
     }
   };
+  
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -85,6 +234,12 @@ const VizInput = () => {
       return; // Exit the function without generating visual
     }
 
+    console.log('ratio is: ', ratio)
+    if (ratio === 0.0000001 || ratio === 50  || ratio === 0.000000025 ) {
+      setDisplayRes(true);
+      return
+    }
+
     if (data.entry === 0 && data.chance === 0) {
       // Both "Chance" and "Entry" are blank, use 0 for the calculation
       console.log(`Chance as a percentage: ${data.percentage}%`);
@@ -98,10 +253,34 @@ const VizInput = () => {
     } else if (data.chance >= data.entry) {
       // Calculate the percentage
       console.log(`Chance as a percentage: ${(data.entry / data.chance) * 100}%`);
+
+
       if ((data.entry / data.chance) < 1.0 && (data.entry / data.chance) >= 0.75 ){
         setRatio(0.75)
       } else if ((data.entry / data.chance) < 0.75 && (data.entry / data.chance) >= 0.5 )  {
         setRatio(0.5)
+      } else if ((data.entry / data.chance) < 0.5 && (data.entry / data.chance) >= 0.25 ) {
+        setRatio(0.25)
+      } else if ((data.entry / data.chance) < 0.25 && (data.entry / data.chance) >= 0.1 ) {
+        setRatio(0.1)
+      } else if ((data.entry / data.chance) < 0.1 && (data.entry / data.chance) >= 0.05 ) {
+        setRatio(0.05)
+      }   else if ((data.entry / data.chance) < 0.05 && (data.entry / data.chance) >= 0.01 ) {
+        setRatio(0.01)
+      }   else if ((data.entry / data.chance) < 0.01 && (data.entry / data.chance) >= 0.005 ) {
+        setRatio(0.005)
+      }   else if ((data.entry / data.chance) < 0.005 && (data.entry / data.chance) >= 0.0001 ) {
+        setRatio(0.0001)
+      }   else if ((data.entry / data.chance) < 0.0001 && (data.entry / data.chance) >= 0.00001 ) {
+        setRatio(0.00001)
+      }   else if ((data.entry / data.chance) < 0.00001 && (data.entry / data.chance) >= 0.000001 ) {
+        setRatio(0.000001) 
+      }  else if ((data.entry / data.chance) < 0.000001 && (data.entry / data.chance) >= 0.0000001 ) {
+        setRatio(0.0000001) 
+      } else if ((data.entry / data.chance) < 0.0000001 && (data.entry / data.chance) >= 0.00000002 ) {
+        setRatio(50) 
+      } else if ((data.entry / data.chance) < 0.00000002) {
+        setRatio(0.000000025) 
       } else {
         setRatio(data.entry / data.chance)
       }
@@ -124,6 +303,7 @@ const VizInput = () => {
       chance: 0,
       percentage: 0,
     });
+    setRatio(0)
     setDisplayRes(false);
   };
 
@@ -131,7 +311,7 @@ const VizInput = () => {
     <div style={{ backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 {displayRes ? (
         <div style={{height: '200vh'}} >
-          <h1 className='mt-5 titti inspire-heading' >Your Chance Visualised</h1>
+          <h1 className='mt-3 titti inspire-heading' >Your Chance Visualised</h1>
           <div className='mt-5 lot' style={{ display: 'flex', width: '100%', background: '#1479ed' }}>
             {ratioData.map((ratioItem) => {
               if (ratio === ratioItem.ratio) {
@@ -144,7 +324,7 @@ const VizInput = () => {
                       <p style={{fontSize: '2.5rem', fontWeight: 'bold'}}>{ratioItem.leftText}</p>
                     </div>
                     <div style={{ flex: 1, background: '#1479ed', color: 'white', borderRadius: '15px'}}>
-                      <Lottie className='ani' animationData={ratioItem.right} style={{ height: '400px', width: '200px' }} />
+                      <Lottie className='ani' animationData={ratioItem.right} style={{ height: '400px'}} />
                       <p style={{fontSize: '2.5rem', fontWeight: 'bold'}}>{ratioItem.rightText}</p>
                     </div>
                   </div>
@@ -219,9 +399,10 @@ const VizInput = () => {
               }}
             >
               <option style={{ color: 'black' }} value={0}>0%</option>
-              <option style={{ color: 'black' }} value={0.000002}>Less Than 0.000002%</option>
-              <option style={{ color: 'black' }} value={0.00001}>0.00001%</option>
-              <option style={{ color: 'black' }} value={0.0001}>0.0001%</option>
+              <option style={{ color: 'black' }} value={'1 in 100 million'}>1 in 100 million</option>
+              <option style={{ color: 'black' }} value={'1 in 50 million'}>1 in 50 million</option>
+              <option style={{ color: 'black' }} value={'1 in 10 million'}>1 in 10 million</option>
+              <option style={{ color: 'black' }} value={0.0001}>1 in 1 million</option>
               <option style={{ color: 'black' }} value={0.001}>0.001%</option>
               <option style={{ color: 'black' }} value={0.01}>0.01%</option>
               <option style={{ color: 'black' }} value={0.5}>0.5%</option>
