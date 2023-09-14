@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Viz.css';
 import Lottie from 'lottie-react';
 
+import {BiRefresh} from 'react-icons/bi'
+
 //Import Animations Later Put In DataJs Store
 
 //100%
@@ -115,7 +117,7 @@ const ratioBlurbData = [
     leftText: 'Dolphin',
     right: sub,
     rightText: 'Submarine',
-    blurb: 'Your chance of around a 1% successful outcome is similar in size of a Dolphin (You) to a Submarine (Total).A Dolphin measures around 4m in length. A Submarine, a watercraft designed for underwater operations reaches around 170m in length. For perspective you need 100 Dolphins to be the same size as a Submarine.'
+    blurb: 'Your chance of around a 1% successful outcome is similar in size of a Dolphin (You) to a Submarine (Total).  A Dolphin measures around 4m in length. A Submarine, a watercraft designed for underwater operations reaches around 170m in length. For perspective you need 100 Dolphins to be the same size as a Submarine.'
   },
     {
     ratio: 0.005,
@@ -231,7 +233,7 @@ const ratioData = [
     leftText: 'Dolphin',
     right: sub,
     rightText: 'Submarine',
-    blurb: 'Your chance of around a 1% successful outcome is similar in size of a Dolphin (You) to a Submarine (Total).A Dolphin measures around 4m in length. A Submarine, a watercraft designed for underwater operations reaches around 170m in length. For perspective you need 100 Dolphins to be the same size as a Submarine.'
+    blurb: 'Your chance of around a 1% successful outcome is similar in size of a Dolphin (You) to a Submarine (Total).  A Dolphin measures around 4m in length. A Submarine, a watercraft designed for underwater operations reaches around 170m in length. For perspective you need 100 Dolphins to be the same size as a Submarine.'
   },
     {
     ratio: 0.005,
@@ -301,6 +303,7 @@ const VizInput = () => {
   });
 
   const [ratio, setRatio] = useState(0)
+  const [blurbRatio, setBlurbRatio] = useState(0)
 
   const [displayRes, setDisplayRes] = useState(false);
 
@@ -316,6 +319,7 @@ const VizInput = () => {
           percentage: 0.00001,
         });
         setRatio(0.0000001); // Manually set the ratio for this case
+        setBlurbRatio(0.0000001); // Manually set the ratio for this
       }  else if (value === '1 in 50 million') {
           // Handle the special case of "1 in 50 million"
           setData({
@@ -324,6 +328,7 @@ const VizInput = () => {
             percentage: 0.000002,
           });
           setRatio(50); // Manually set the ratio for this case
+          setBlurbRatio(50); // Manually set the ratio for this
       } else if (value === '1 in 100 million') {
           // Handle the special case of "1 in 100 million"
           setData({
@@ -332,6 +337,7 @@ const VizInput = () => {
             percentage: 0.0000025,
           });
           setRatio(0.000000025); // Manually set the ratio for this case
+          setBlurbRatio(0.000000025)
       } else {
         // Handle other percentage values
         setData({
@@ -374,11 +380,13 @@ const VizInput = () => {
       // Both "Chance" and "Entry" are blank, use 0 for the calculation
       console.log(`Chance as a percentage: ${data.percentage}%`);
       setRatio(data.percentage/100)
+      setBlurbRatio(data.percentage/100)
       setDisplayRes(true);
     } else if (data.percentage !== 0) {
       // Use the selected percentage value
       console.log(`Chance as a percentage: ${data.percentage}%`);
       setRatio(data.percentage/100)
+      setBlurbRatio(data.percentage/100)
       setDisplayRes(true);
     } else if (data.chance >= data.entry) {
       // Calculate the percentage
@@ -387,32 +395,46 @@ const VizInput = () => {
 
       if ((data.entry / data.chance) < 1.0 && (data.entry / data.chance) >= 0.75 ){
         setRatio(0.75)
+        setBlurbRatio(0.75)
       } else if ((data.entry / data.chance) < 0.75 && (data.entry / data.chance) >= 0.5 )  {
         setRatio(0.5)
+        setBlurbRatio(0.5)
       } else if ((data.entry / data.chance) < 0.5 && (data.entry / data.chance) >= 0.25 ) {
         setRatio(0.25)
+        setBlurbRatio(0.25)
       } else if ((data.entry / data.chance) < 0.25 && (data.entry / data.chance) >= 0.1 ) {
         setRatio(0.1)
+        setBlurbRatio(0.1)
       } else if ((data.entry / data.chance) < 0.1 && (data.entry / data.chance) >= 0.05 ) {
         setRatio(0.05)
+        setBlurbRatio(0.05)
       }   else if ((data.entry / data.chance) < 0.05 && (data.entry / data.chance) >= 0.01 ) {
         setRatio(0.01)
+        setBlurbRatio(0.01)
       }   else if ((data.entry / data.chance) < 0.01 && (data.entry / data.chance) >= 0.005 ) {
         setRatio(0.005)
+        setBlurbRatio(0.005)
       }   else if ((data.entry / data.chance) < 0.005 && (data.entry / data.chance) >= 0.0001 ) {
         setRatio(0.0001)
+        setBlurbRatio(0.0001)
       }   else if ((data.entry / data.chance) < 0.0001 && (data.entry / data.chance) >= 0.00001 ) {
         setRatio(0.00001)
+        setBlurbRatio(0.00001)
       }   else if ((data.entry / data.chance) < 0.00001 && (data.entry / data.chance) >= 0.000001 ) {
         setRatio(0.000001) 
+        setBlurbRatio(0.000001)
       }  else if ((data.entry / data.chance) < 0.000001 && (data.entry / data.chance) >= 0.0000001 ) {
         setRatio(0.0000001) 
+        setBlurbRatio(0.0000001)
       } else if ((data.entry / data.chance) < 0.0000001 && (data.entry / data.chance) >= 0.00000002 ) {
         setRatio(50) 
+        setBlurbRatio(50)
       } else if ((data.entry / data.chance) < 0.00000002) {
         setRatio(0.000000025) 
+        setBlurbRatio(0.000000025)
       } else {
         setRatio(data.entry / data.chance)
+        setBlurbRatio(data.entry / data.chance)
       }
       setDisplayRes(true);
     } else {
@@ -434,21 +456,22 @@ const VizInput = () => {
       percentage: 0,
     });
     setRatio(0)
+    setBlurbRatio(0)
     setDisplayRes(false);
   };
 
   return (
     <div style={{ backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 {displayRes ? (
-        <div style={{height: '200vh'}} >
+        <div style={{height: '100%'}} >
           <h1 className='mt-3 titti inspire-heading' >Your Chance Visualised</h1>
-          <div className='mt-5 lot' style={{ display: 'flex', width: '100%', background: '#1479ed' }}>
+          <div className='mt-5 lot mx-auto' style={{ display: 'flex', width: '70%',background: '#1479ed' }}>
             {ratioData.map((ratioItem) => {
               if (ratio === ratioItem.ratio) {
                 return (
                   <div key={ratioItem.ratio} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }} className='sids'>
                     <div style={{ flex: 1, background: 'rgba(255, 255, 255, 0.93)' }}>
-                      <Lottie animationData={ratioItem.left} style={{ height: '400px' }} />
+                      <Lottie className='ani' animationData={ratioItem.left} style={{ height: '400px' }} />
                       <p style={{fontSize: '2.5rem', fontWeight: 'bold'}}>{ratioItem.leftText} (You)</p>
                     </div>
                     <div style={{ flex: 1, background: '#1479ed', color: 'white', borderRadius: '15px'}}>
@@ -461,22 +484,20 @@ const VizInput = () => {
               return null;
             })}
           </div>
-          <div className='stats mt-5'>
-            {/* <div className='w-50'>
+          <div className='stats mt-5 pb-5'>
+            <div className='w-50 mx-auto blur'>
             {ratioBlurbData.map((ratioItem) => {
-                if (ratio === ratioItem.ratio) {
+                if (blurbRatio === ratioItem.ratio) {
                   return ( 
-                    <div>
+                    <div style={{background: '#1479ed', color:'white', padding: '10px 10px 10px 10px', borderRadius: '15px'}}>
                       <p style={{ fontSize: '1.5rem' }}>{ratioItem.blurb}</p>
                     </div>
                   )
                 }
                 return null
               })}
-            </div> */}
-            <button onClick={handleSwitch}>Back to Input</button>
-            <div>Result</div>
-            <p>Chance Ratio: {ratio}</p>
+            </div>
+            <button style={{background: '#1479ed', color: 'white'}} className='btn mt-4' onClick={handleSwitch}>New Visualisation <BiRefresh style={{fontSize: '1.5rem'}} /></button>
           </div>
       </div>
       ) : (

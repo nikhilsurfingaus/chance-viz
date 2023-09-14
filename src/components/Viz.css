@@ -57,3 +57,37 @@ form.frm {
 .titti {
     margin-top: 50px !important;
 }
+
+.ani {
+    width: 80%;
+    margin: auto;
+}
+
+@media (max-width: 1600px) {
+    .titti {
+        font-size: 2rem;
+    }
+    .lot {
+        width: 60% !important;
+    }
+    .blur p {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .lot {
+        width: 90% !important;
+    }
+    .blur {
+        width: 90% !important;
+    }
+    .ani {
+        height: 300px !important;
+        width: 80%;
+        margin: auto;
+    }
+    .lot p {
+        font-size: 1.5rem !important;
+    }
+}
