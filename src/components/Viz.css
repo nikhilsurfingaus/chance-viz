@@ -30,7 +30,7 @@
 
 form.frm {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     /* Adjust this value as needed */
 }
 
@@ -89,5 +89,8 @@ form.frm {
     }
     .lot p {
         font-size: 1.5rem !important;
+    }
+    .blur p {
+        font-size: 1.05rem !important;
     }
 }

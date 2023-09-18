@@ -12,7 +12,7 @@ const NavTab = () => {
     <Navbar expand="lg" className="bg-body-tertiary fixed-top">
       <Container>
       <Navbar.Brand className='text-white' href="/">
-          <span style={{ fontSize: '2rem' }}>Chance Viz</span>
+          <span style={{ fontSize: '2rem', fontWeight: 'bolder' }}>Chance Viz</span>
           <img src={logo} alt="Logo" className="logo-image" />
         </Navbar.Brand>        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">

@@ -9,11 +9,12 @@
 }
 
 .navbar-nav {
-    margin-left: -230px !important;
+    margin-left: -250px !important;
 }
 
 .nav-link {
     color: #ffffff;
+    font-weight: bold;
     margin: 0 15px;
     transition: color 0.3s;
     font-size: 1.3rem;
@@ -81,6 +82,10 @@
 
 @media (max-width: 1000px) {
     .navbar-nav {
-        margin-left: 0px;
+        margin-left: 0% !important;
+        width: 100%;
+    }
+    .nav-link-container {
+        border-top: white solid 1px;
     }
 }
