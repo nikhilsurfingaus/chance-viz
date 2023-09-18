@@ -82,6 +82,17 @@ const VizInput = () => {
       return; // Exit the function without generating visual
     }
 
+      // Check if both inputs are zero or the selected percentage is 0%
+    if ((data.entry === 0 && data.chance === 0) && data.percentage === 0) {
+      alert('Invalid input: Either both inputs are zero or the selected percentage is 0%.');
+      setData({
+        entry: 0,
+        chance: 0,
+        percentage: 0,
+      });
+      return; // Exit the function without generating visual
+    }
+
     console.log('ratio is: ', ratio)
     if (ratio === 0.0000001 || ratio === 50  || ratio === 0.000000025 ) {
       setDisplayRes(true);
