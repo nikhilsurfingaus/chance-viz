@@ -37,6 +37,11 @@
     /* Adjust the font size to your preference */
 }
 
+.ally {
+    --animate-duration: 2s;
+    --animate-delay: 2s;
+}
+
 @media (max-width: 1000px) {
     .send {
         height: 35vh !important;

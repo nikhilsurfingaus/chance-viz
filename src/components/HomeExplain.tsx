@@ -4,12 +4,14 @@ import GTR from '../animation/viz.json';
 import Cogs from '../animation/improb.json';
 import Review from '../animation/persp.json';
 import './Explain.css'
+import { Slide } from "react-awesome-reveal";
 
 const AnimateSection = () => {
   return (
     <div style={{ height: '100vh', background: '#0b5ed7' }} id="animateSection" className='animateMain' >
       <Container className="h-100 d-flex flex-column justify-content-center holder">
         <h1 className="expect text-center mb-5 mt-5 text-white">What You Can Expect...</h1>
+        <Slide direction='left'>
         <Row xs={1} sm={1} md={3} className="g-4">
           {/* Card 1 */}
           <Col>
@@ -59,6 +61,7 @@ const AnimateSection = () => {
             </Card>
           </Col>
         </Row>
+        </Slide>
       </Container>
     </div>
   );

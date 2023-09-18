@@ -69,7 +69,7 @@ const AboutEmail = () => {
         }}
       >
         <div
-        className='ally'
+        className='ally animate__animated animate__swing animate__infinite'
           style={{
             backgroundColor: 'black',
             borderRadius: '50%',

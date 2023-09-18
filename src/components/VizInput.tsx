@@ -502,7 +502,7 @@ const VizInput = () => {
       </div>
       ) : (
         <div style={{height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-          <form className='frm' onSubmit={handleSubmit}>
+          <form className='animate__animated animate__fadeIn frm' onSubmit={handleSubmit}>
           <h2 className='mb-5' style={{fontWeight: 'bold', fontSize: '2.5rem'}}>Enter Data To Visualize</h2>
           <div className="sentence">
             <p className='mb-1 fw-bold'>Chance of</p>

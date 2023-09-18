@@ -2,6 +2,7 @@ import './Summary.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import people from '../animation/rocket.json';
 import Lottie from 'lottie-react';
+import { Slide } from "react-awesome-reveal";
 
 const HomeSummary = () => {
   return (
@@ -15,9 +16,11 @@ const HomeSummary = () => {
             </p>
           </Col>
           <Col md={5} xs={12} className="image-container">
-            <div className="blue-circle">
-              <Lottie animationData={people} style={{ height: '120%' }} />
-            </div>
+            <Slide direction='right'>
+              <div className="blue-circle">
+                <Lottie animationData={people} style={{ height: '120%' }} />
+              </div>
+            </Slide>
           </Col>
         </Row>
       </Container>

@@ -2,14 +2,16 @@ import React from 'react';
 import './Stats.css';
 import people from '../animation/stat1.json';
 import Lottie from 'lottie-react';
+import { Slide } from "react-awesome-reveal";
 
 const AboutStats = () => {
   return (
-    <div className="stats-container" style={{ height: '60vh', background: 'white' }}>
+    <div className="stats-container animate__animated animate__fadeIn" style={{ height: '60vh', background: 'white' }}>
       <h2 className="section-title mt-5 text-center inspire-head">By The Numbers...</h2>
       <div className="container contain" style={{marginTop: '75px'}}>
         <div className="row">
           <div className="col-md-6">
+          <Slide direction='left'>
             <div className="stats">
               <div className="row">
                 <div className="col-6 stat-item">
@@ -32,6 +34,7 @@ const AboutStats = () => {
                 </div>
               </div>
             </div>
+            </Slide>
           </div>
           <div className="col-md-6">
           <Lottie animationData={people} style={{ height: '60%' }}  className="img-fluid" />
