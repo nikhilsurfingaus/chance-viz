@@ -132,8 +132,8 @@ const ratioBlurbData = [
     left: cell,
     leftText: 'Singular Cell',
     right: human,
-    rightText: 'Human Hair',
-    blurb: 'Your chance of around a 0.01% successful outcome is similar in size of a Singular Cell (You) to Human Hair (Total). A Singular Cell, the basic unit of life, is incredibly tiny, typically measuring only a few micrometers (microns) in size, which is about 0.0001cm. Human Hair strands are much larger, averaging around 50 to 100 micrometers (0.005 to 0.01 cm) in diameter. For perspective you need at least 10,000 Cells to be the same size as Human Hair.'
+    rightText: 'Strand Of Hair',
+    blurb: 'Your chance of around a 0.01% successful outcome is similar in size of a Singular Cell (You) to a Strand of Human Hair (Total). A Singular Cell, the basic unit of life, is incredibly tiny, typically measuring only a few micrometers (microns) in size, which is about 0.0001cm. Human Hair strands are much larger, averaging around 50 to 100 micrometers (0.005 to 0.01 cm) in diameter. For perspective you need at least 10,000 Cells to be the same size as a Strand of Human Hair.'
   },
   {
     ratio: 0.00001,
@@ -248,7 +248,7 @@ const ratioData = [
     left: cell,
     leftText: 'Singular Cell',
     right: human,
-    rightText: 'Human Hair',
+    rightText: 'Strand Of Hair',
     blurb: 'Your chance of around a 0.01% successful outcome is similar in size of a Singular Cell (You) to Human Hair (Total). A Singular Cell, the basic unit of life, is incredibly tiny, typically measuring only a few micrometers (microns) in size, which is about 0.0001cm. Human Hair strands are much larger, averaging around 50 to 100 micrometers (0.005 to 0.01 cm) in diameter. For perspective you need at least 10,000 Cells to be the same size as Human Hair.'
   },
   {
@@ -469,7 +469,7 @@ const VizInput = () => {
             {ratioData.map((ratioItem) => {
               if (ratio === ratioItem.ratio) {
                 return (
-                  <div key={ratioItem.ratio} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }} className='sids'>
+                  <div key={ratioItem.ratio} style={{ flex: 1, display: 'flex', justifyContent: 'center' }} className='sids'>
                     <div style={{ flex: 1, background: 'rgba(255, 255, 255, 0.93)' }}>
                       <Lottie className='ani' animationData={ratioItem.left} style={{ height: '400px' }} />
                       <p style={{fontSize: '2.5rem', fontWeight: 'bold'}}>{ratioItem.leftText} (You)</p>
@@ -490,7 +490,7 @@ const VizInput = () => {
                 if (blurbRatio === ratioItem.ratio) {
                   return ( 
                     <div style={{background: '#1479ed', color:'white', padding: '10px 10px 10px 10px', borderRadius: '15px'}}>
-                      <p style={{ fontSize: '1.5rem' }}>{ratioItem.blurb}</p>
+                      <p style={{ fontSize: '1.3rem' }}>{ratioItem.blurb}</p>
                     </div>
                   )
                 }
@@ -505,7 +505,7 @@ const VizInput = () => {
           <form className='frm' onSubmit={handleSubmit}>
           <h2 className='mb-5' style={{fontWeight: 'bold', fontSize: '2.5rem'}}>Enter Data To Visualize</h2>
           <div className="sentence">
-            <p className='mb-1'>Chance of</p>
+            <p className='mb-1 fw-bold'>Chance of</p>
             <input
               type="number"
               name="entry"
@@ -519,11 +519,15 @@ const VizInput = () => {
                 backgroundColor: 'transparent', // Transparent background
                 fontSize: '14px',
                 border: '3px solid white', // Set the border color to white // Smaller font size
-                borderRadius: '10px' // Set the border color to white // Smaller font size
+                borderRadius: '10px', // Set the border color to white // Smaller font size
+                display: 'flex',               // Use flexbox
+                justifyContent: 'center',     // Center horizontally
+                alignItems: 'center',         // Center vertically
+                textAlign: 'center',          // Center text horizontally
               }}
               disabled={data.percentage !== 0}
             />
-            <p className='mb-1'>in</p>
+            <p className='mb-1 fw-bold'>in</p>
             <input
               type="number"
               name="chance"
@@ -537,12 +541,16 @@ const VizInput = () => {
                 backgroundColor: 'transparent', // Transparent background
                 fontSize: '14px', // Smaller font size
                 border: '3px solid white', // Set the border color to white
-                borderRadius: '10px' // Set the border color to white // Smaller font size
+                borderRadius: '10px', // Set the border color to white // Smaller font size
+                display: 'flex',               // Use flexbox
+                justifyContent: 'center',     // Center horizontally
+                alignItems: 'center',         // Center vertically
+                textAlign: 'center',   
               }}
               disabled={data.percentage !== 0}
             />
           </div>
-          <p style={{fontSize: '2rem', fontWeight: 'bold'}}>OR</p>
+          <p style={{fontSize: '1.5rem', fontWeight: 'bold'}}>OR</p>
           <div>
             <select
             className='mb-4'
@@ -577,7 +585,7 @@ const VizInput = () => {
             </select>
           </div>
           <div>
-            <button className='btn generate' type="submit">Generate Visual</button>
+            <button className='btn generate mt-4' type="submit">Generate Visual</button>
           </div>
         </form>
         </div>
