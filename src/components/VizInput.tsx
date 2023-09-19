@@ -23,7 +23,7 @@ const VizInput = () => {
     const { name, value } = event.target;
   
     if (name === 'percentage') {
-      if (value === '1 in 10 million') {
+      if (value === '10000000') {
         // Handle the special case of "1 in 10 million"
         setData({
           entry: 0,
@@ -32,7 +32,7 @@ const VizInput = () => {
         });
         setRatio(0.0000001); // Manually set the ratio for this case
         setBlurbRatio(0.0000001); // Manually set the ratio for this
-      }  else if (value === '1 in 50 million') {
+      }  else if (value === '50000000') {
           // Handle the special case of "1 in 50 million"
           setData({
             entry: 0,
@@ -41,7 +41,7 @@ const VizInput = () => {
           });
           setRatio(50); // Manually set the ratio for this case
           setBlurbRatio(50); // Manually set the ratio for this
-      } else if (value === '1 in 100 million') {
+      } else if (value === '100000000') {
           // Handle the special case of "1 in 100 million"
           setData({
             entry: 0,
@@ -278,7 +278,7 @@ const VizInput = () => {
             <select
             className='mb-4'
               name="percentage"
-              value={data.percentage}
+              value={data.percentage.toString()}
               onChange={handleChange}
               disabled={data.entry !== 0 || data.chance !== 0}
               style={{
@@ -291,9 +291,9 @@ const VizInput = () => {
               }}
             >
               <option style={{ color: 'black' }} value={0}>0%</option>
-              <option style={{ color: 'black' }} value={'1 in 100 million'}>1 in 100 million</option>
-              <option style={{ color: 'black' }} value={'1 in 50 million'}>1 in 50 million</option>
-              <option style={{ color: 'black' }} value={'1 in 10 million'}>1 in 10 million</option>
+              <option style={{ color: 'black' }} value={100000000}>1 in 100 million</option>
+              <option style={{ color: 'black' }} value={50000000}>1 in 50 million</option>
+              <option style={{ color: 'black' }} value={10000000}>1 in 10 million</option>
               <option style={{ color: 'black' }} value={0.0001}>1 in 1 million</option>
               <option style={{ color: 'black' }} value={0.001}>0.001%</option>
               <option style={{ color: 'black' }} value={0.01}>0.01%</option>
