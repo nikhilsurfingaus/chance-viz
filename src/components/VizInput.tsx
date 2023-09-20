@@ -3,6 +3,7 @@ import './Viz.css';
 import Lottie from 'lottie-react';
 
 import {BiRefresh} from 'react-icons/bi'
+import {IoIosConstruct} from 'react-icons/io'
 
 import { ratioBlurbData, ratioData } from './VisualData'; // Adjust the import path as needed
 
@@ -309,7 +310,7 @@ const VizInput = () => {
             </select>
           </div>
           <div>
-            <button className='btn generate mt-4' type="submit">Generate Visual</button>
+            <button className='btn generate mt-4' type="submit">Generate Visual <span><IoIosConstruct className='mb-1' /></span></button>
           </div>
         </form>
         <div className="privacy mt-5">
