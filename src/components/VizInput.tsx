@@ -6,6 +6,7 @@ import {BiRefresh} from 'react-icons/bi'
 
 import { ratioBlurbData, ratioData } from './VisualData'; // Adjust the import path as needed
 
+import dataTrans from '../animation/dataTransform.json';
 
 const VizInput = () => {
   const [data, setData] = useState({
@@ -224,9 +225,9 @@ const VizInput = () => {
           </div>
       </div>
       ) : (
-        <div style={{height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <div style={{height: '95vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+          <h1 className='tits inspire-heading' >Enter Data To Visualize</h1>
           <form className='animate__animated animate__fadeIn frm' onSubmit={handleSubmit}>
-          <h2 className='mb-5' style={{fontWeight: 'bold', fontSize: '2.5rem'}}>Enter Data To Visualize</h2>
           <div className="sentence">
             <p className='mb-1 fw-bold'>Chance of</p>
             <input
@@ -311,6 +312,12 @@ const VizInput = () => {
             <button className='btn generate mt-4' type="submit">Generate Visual</button>
           </div>
         </form>
+        <div className="privacy mt-5">
+            <p>*Your privacy is important to us, and we do not collect any personal data during your interaction with our service.</p>
+        </div>
+        <div className='trans'>
+          <Lottie className='bott' animationData={dataTrans} style={{ height: '200px' }} />
+        </div>
         </div>
       )}
     </div>

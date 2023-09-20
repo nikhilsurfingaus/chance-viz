@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Bebas+Neue&family=Koulen&family=Roboto&display=swap');
 .frm {
     background-color: #1479ed;
     color: white;
@@ -6,6 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 50px;
 }
 
 .sentence {
@@ -15,6 +20,12 @@
     /* Add some spacing between elements for better readability */
     margin-bottom: 10px;
     /* Adjust the margin to vertically align the text with inputs */
+}
+
+.privacy {
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: 0;
+    width: 60%;
 }
 
 
@@ -58,6 +69,10 @@ form.frm {
     margin-top: 50px !important;
 }
 
+.tits {
+    margin-top: 0px !important;
+}
+
 .ani {
     width: 80%;
     margin: auto;
@@ -72,6 +87,19 @@ form.frm {
     }
     .blur p {
         font-size: 1.2rem !important;
+    }
+    .tits {
+        margin-top: 40px !important;
+        font-size: 2rem;
+    }
+    .frm {
+        margin-top: 10px;
+    }
+    .privacy {
+        margin-top: 28px !important;
+    }
+    .bott {
+        margin-top: -30px !important;
     }
 }
 
@@ -92,5 +120,19 @@ form.frm {
     }
     .blur p {
         font-size: 1.05rem !important;
+    }
+    .tits {
+        margin-top: 40px !important;
+    }
+    .frm {
+        margin-top: 0px;
+    }
+    .privacy {
+        margin-top: 8px !important;
+        width: 90%;
+        font-size: 0.8rem;
+    }
+    .bott {
+        margin-top: -40px !important;
     }
 }
