@@ -18,7 +18,7 @@ const Foot = () => {
             <img
               alt="logo"
               src={logo}
-              width="50px"
+              width="60px"
               style={{ marginRight: '2rem' }}
             />
             <span className="h5 font-weight-bold"></span>
