@@ -1,5 +1,5 @@
 import React from 'react'
-import VizInput from '../components/VizInput'
+import VizInput from '../components/LogicUI/VizInput'
 
 const Visual = () => {
   return (

@@ -1,7 +1,7 @@
-import HeroSection from '../components/HeroSection'
-import HomeExplain from '../components/HomeExplain'
+import HeroSection from '../components/HeroUI/HeroSection'
+import HomeExplain from '../components/HomeUI/HomeExplain'
 import ScrollToTop from "react-scroll-to-top";
-import HomeSummary from '../components/HomeSummary';
+import HomeSummary from '../components/HomeUI/HomeSummary';
 
 const Home = () => {
   return (

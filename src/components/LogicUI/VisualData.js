@@ -1,60 +1,60 @@
 //Import Animations Later Put In DataJs Store
 
 //100%
-import tennis from '../animation/visAnimate/tennis.json'
-import orange from '../animation/visAnimate/orange.json'
+import tennis from '../../animation/visAnimate/tennis.json'
+import orange from '../../animation/visAnimate/orange.json'
 
 //75%
-import van from '../animation/visAnimate/van.json'
-import car from '../animation/visAnimate/car.json'
+import van from '../../animation/visAnimate/van.json'
+import car from '../../animation/visAnimate/car.json'
 
 //50%
-import nfl from '../animation/visAnimate/nfl.json'
-import soccer from '../animation/visAnimate/soccer.json'
+import nfl from '../../animation/visAnimate/nfl.json'
+import soccer from '../../animation/visAnimate/soccer.json'
 
 //25%
-import grape from '../animation/visAnimate/grape.json'
-import burger from '../animation/visAnimate/burger.json'
+import grape from '../../animation/visAnimate/grape.json'
+import burger from '../../animation/visAnimate/burger.json'
 
 //10%
-import pencil from '../animation/visAnimate/pencil.json'
-import bottle from '../animation/visAnimate/bottle.json'
+import pencil from '../../animation/visAnimate/pencil.json'
+import bottle from '../../animation/visAnimate/bottle.json'
 
 //5%
-import marble from '../animation/visAnimate/marble.json'
-import bowling from '../animation/visAnimate/bowling.json'
+import marble from '../../animation/visAnimate/marble.json'
+import bowling from '../../animation/visAnimate/bowling.json'
 
 //1%
-import dolphin from '../animation/visAnimate/dolphin.json'
-import sub from '../animation/visAnimate/submarine.json'
+import dolphin from '../../animation/visAnimate/dolphin.json'
+import sub from '../../animation/visAnimate/submarine.json'
 
 //0.5%
-import phone from '../animation/visAnimate/phone.json'
-import cinema from '../animation/visAnimate/cinema.json'
+import phone from '../../animation/visAnimate/phone.json'
+import cinema from '../../animation/visAnimate/cinema.json'
 
 //0.01%
-import cell from '../animation/visAnimate/cell.json'
-import human from '../animation/visAnimate/human.json'
+import cell from '../../animation/visAnimate/cell.json'
+import human from '../../animation/visAnimate/human.json'
 
 //0.001%
-import sand from '../animation/visAnimate/sand.json'
-import beach from '../animation/visAnimate/beach.json'
+import sand from '../../animation/visAnimate/sand.json'
+import beach from '../../animation/visAnimate/beach.json'
 
 //0.0001%
-import molecule from '../animation/visAnimate/molecule.json'
-import droplet from '../animation/visAnimate/droplet.json'
+import molecule from '../../animation/visAnimate/molecule.json'
+import droplet from '../../animation/visAnimate/droplet.json'
 
 //0.00001%
-import coral from '../animation/visAnimate/coral.json'
-import ocean from '../animation/visAnimate/world.json'
+import coral from '../../animation/visAnimate/coral.json'
+import ocean from '../../animation/visAnimate/world.json'
 
 //0.000002%
-import star from '../animation/visAnimate/star.json'
-import milky from '../animation/visAnimate/galaxy.json'
+import star from '../../animation/visAnimate/star.json'
+import milky from '../../animation/visAnimate/galaxy.json'
 
 // < 0.000002%
-import atom from '../animation/visAnimate/atom.json'
-import cosmos from '../animation/visAnimate/cosmos.json'
+import atom from '../../animation/visAnimate/atom.json'
+import cosmos from '../../animation/visAnimate/cosmos.json'
 
 export const ratioBlurbData = [{
         ratio: 1,

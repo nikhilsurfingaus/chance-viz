@@ -1,4 +1,4 @@
-import nisson from '../assets/videos/about.mp4';
+import nisson from '../../assets/videos/about.mp4';
 import './AboutCover.css';
 
 const AboutCover = () => {

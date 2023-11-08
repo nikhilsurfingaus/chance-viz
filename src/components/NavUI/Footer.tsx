@@ -1,5 +1,5 @@
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import './Footer.css';
 
 const Foot = () => {

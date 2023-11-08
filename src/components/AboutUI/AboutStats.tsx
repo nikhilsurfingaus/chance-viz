@@ -1,6 +1,6 @@
 import React from 'react';
 import './Stats.css';
-import people from '../animation/stat1.json';
+import people from '../../animation/stat1.json';
 import Lottie from 'lottie-react';
 import { Slide } from "react-awesome-reveal";
 

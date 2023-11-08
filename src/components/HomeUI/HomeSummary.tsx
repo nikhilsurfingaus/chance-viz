@@ -1,6 +1,6 @@
 import './Summary.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import people from '../animation/rocket.json';
+import people from '../../animation/rocket.json';
 import Lottie from 'lottie-react';
 import { Slide } from "react-awesome-reveal";
 

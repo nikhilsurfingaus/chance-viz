@@ -1,5 +1,5 @@
 import Typewriter from 'typewriter-effect';
-import nisson from '../assets/videos/bg.mp4';
+import nisson from '../../assets/videos/bg.mp4';
 import './Hero.css';
 import { Link as ScrollLink } from 'react-scroll';
 import {AiFillCaretDown} from 'react-icons/ai'
