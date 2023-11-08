@@ -7,7 +7,7 @@ import {IoIosConstruct} from 'react-icons/io'
 
 import { ratioBlurbData, ratioData } from './VisualData'; // Adjust the import path as needed
 
-import dataTrans from '../animation/dataTransform.json';
+import dataTrans from '../../animation/dataTransform.json';
 
 const VizInput = () => {
   const [data, setData] = useState({
@@ -87,6 +87,17 @@ const VizInput = () => {
       // Check if both inputs are zero or the selected percentage is 0%
     if ((data.entry === 0 && data.chance === 0) && data.percentage === 0) {
       alert('Invalid input: Either both inputs are zero or the selected percentage is 0%.');
+      setData({
+        entry: 0,
+        chance: 0,
+        percentage: 0,
+      });
+      return; // Exit the function without generating visual
+    }
+
+    //Refactoring Additonal Check
+    if ((data.entry < 0 || data.chance < 0) ) {
+      alert('Invalid input: Input chance needs to be non-zero');
       setData({
         entry: 0,
         chance: 0,

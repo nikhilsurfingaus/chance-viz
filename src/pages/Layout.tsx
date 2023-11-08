@@ -1,10 +1,10 @@
-import NavTab from '../components/Nav'
+import NavTab from '../components/NavUI/Nav'
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from './Home';
 import Visual from './Visual';
 import About from './About';
 import PageNotFound from './PageNotFound';
-import Foot from '../components/Footer';
+import Foot from '../components/NavUI/Footer';
 
 const Layout = () => {
   return (

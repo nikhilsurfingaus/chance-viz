@@ -1,8 +1,8 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import Lottie from 'lottie-react';
-import GTR from '../animation/viz.json';
-import Cogs from '../animation/improb.json';
-import Review from '../animation/persp.json';
+import GTR from '../../animation/viz.json';
+import Cogs from '../../animation/improb.json';
+import Review from '../../animation/persp.json';
 import './Explain.css'
 import { Slide } from "react-awesome-reveal";
 

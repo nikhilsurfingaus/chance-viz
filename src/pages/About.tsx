@@ -1,8 +1,8 @@
 import React from 'react'
-import AboutCover from '../components/AboutCover'
-import AboutStats from '../components/AboutStats'
-import { AboutFAQ } from '../components/AboutFAQ'
-import AboutEmail from '../components/AboutEmail'
+import AboutCover from '../components/AboutUI/AboutCover'
+import AboutStats from '../components/AboutUI/AboutStats'
+import { AboutFAQ } from '../components/AboutUI/AboutFAQ'
+import AboutEmail from '../components/AboutUI/AboutEmail'
 import ScrollToTop from "react-scroll-to-top";
 
 const About = () => {
